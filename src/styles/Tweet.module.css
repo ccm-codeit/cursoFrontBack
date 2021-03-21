@@ -1,6 +1,7 @@
 .Wrapper{
-    width: 60%;
+    width: 50%;
     margin: 0 auto;
+    max-width: 600px;
     /* border: 1px solid red; */
     display: flex;
     flex-wrap: wrap;
@@ -10,14 +11,15 @@
     
 }
 .ImgContainer{
-    width: 15%;
+    /* width: 15%; */
     /* border: 1px solid blue; */
-    padding-top: 10px;
-}
+    padding-top: 10px; 
+} 
 
 .Img{
-    width: 100%;
+    width: 48px;
     border-radius: 50%;
+    height: 48px;
 }
 
 .ContentContainer{
