@@ -1,37 +1,37 @@
-# Día 2: Frontend con React
-Bienvenido al repositorio del mini-proyecto que se realizará en el taller de Frontend con React.
+# Día 4: Conexión entre frontend y backend
+Bienvenido al repositorio del mini-proyecto que se realizará en el taller de Conexión entre frontend y backend
 
 ## ¿De qué va el proyecto?
-Se trata de un ejemplo de interfaz sencilla hecha con React.
-Utilizarás JavaScript, JSX (un híbrido de Javascript y HTML) y un poco de CSS.
-El nombre de la app es **Change My Mind**.
-La idea es una aplicación donde se lee una publicación controversial. El usuario puede publicar sus comentarios,
-argumentando por qué sí o por qué no está de acuerdo con la publicación inicial.
+Crearemos un clon de Twitter completamante fullstack.
+Conectaremos un frontend en React con un backend en Node ultilizando Axios.
+Tanto el frontend como el backend se te prpoporcionaran, para enfocarcnos únicamente en la conexión de los dos.
 
 ### En este taller, aprenderás:
-- ¿Qué es React?
-- Inicialización de un proyecto de React.
-- Básicos de una interfaz con React.
-- Creación de componentes en React.  
-- Manejo del estado con useState.  
-- Mostrar información del estado a la pantalla.  
-- Publicar y borrar información / comentarios.  
+- ¿Qué significa fullstack?
+- ¿Qué significa conectar un frontend con backend?
+- ¿Qué es Axios?
+- ¿Cómo solicitar y mandar datos a un servidor?  
 
 ## Cómo usar el Repo
 Existen dos branches: `main` y `begin`.   
 En `main`, encontrarás el código del proyecto como quedará al final del curso. Si gustas, puedes descargarlo o clonarlo desde la terminal usando Git, y construir sobre él o modificar todo lo que quieras.  
-En `begin`, encontrarás una versión del proyecto inicial, antes de haber desarrollado cualquier cosa. Puedes descargar o clonar esta branch al inicio del curso para programar a manera de _follow allong_, o puedes crear un proyecto de React desde cero por tu cuenta. (Esto se hace con el commando `npx create-react-app nombreapp`).  
+En `begin`, encontrarás una versión del proyecto inicial, antes de haber desarrollado cualquier cosa. Puedes descargar o clonar esta branch al inicio del curso para programar a manera de _follow allong_.
 
 ## Comándos útiles
 ### `npm start`
 
+
 Corre la app en modo de desarrollo (localmente).\
-Abre [http://localhost:3000](http://localhost:3000) para visualizar tu proyecto en el navegador.
+Abre [http://localhost:3000](http://localhost:3000) para visualizar el frontend en el navegador.
 
 La página se recarga automáticamente si haces cambios en el código.\
 También podrás ver errores (si los hay) en la consola del navegador. Abre la consola de tu navegador con `Ctrl` + `Shift` + `C`.
 
 Para detener el servidor de desarrollo, en la terminal presiona `Ctrl` + `C`.
 
-# cursoReact
+### `nodemon server`
+
+Corre el servidor en modo desarrollo (localmente) en el puerto 5000
+El servidor se refescara automaticamente despueés de cualquier modificación en el código
+
 # cursoFrontBack
