@@ -38,30 +38,6 @@ function App() {
       <div className="Main-Wrapper">
         <Header />
         <div className="Comment-Section">
-          <form className="Form-Wrapper">
-            <p>What do you think?</p>
-            <label className="Title-Contanier">
-              <input
-                className="Title-Input"
-                name="title"
-                placeholder="Your name"
-                onChange={handleOnChange}
-              />
-            </label>
-
-            <label className="Desc-Contanier">
-              <textarea
-                name="description"
-                placeholder="I think that..."
-                onChange={handleOnChange}
-                className="Desc-Input"
-              />
-            </label>
-
-            <button className="Add-Button" onClick={onSubmit}>
-              Add
-            </button>
-          </form>
 
           <div>
             {/* {cards.map((card, index) => {
