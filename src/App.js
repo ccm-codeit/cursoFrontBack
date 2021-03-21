@@ -2,7 +2,7 @@ import "./styles/App.css";
 import Tweet from "./components/Tweet";
 import Header from "./components/Header";
 import { useState } from "react";
-
+//TEST
 function App() {
   const [card, setCard] = useState({
     // la información de los inputs
