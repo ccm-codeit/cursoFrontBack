@@ -1,0 +1,50 @@
+.Wrapper{
+    width: 60%;
+    margin: 0 auto;
+    /* border: 1px solid red; */
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid rgb(226, 223, 223);
+    padding: 5px;
+    margin-top: 25px;
+    
+}
+.ImgContainer{
+    width: 15%;
+    /* border: 1px solid blue; */
+    padding-top: 10px;
+}
+
+.Img{
+    width: 100%;
+    border-radius: 50%;
+}
+
+.ContentContainer{
+    width: 85%;
+    /* border: 1px solid green; */
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 1.5rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding: 10px;
+
+}
+
+.Name{
+    margin-right: 5px;
+}
+.Username{
+    margin-right: 5px; ;
+}
+.Username::before{
+    content: "@";
+}
+
+.Date::before{
+    content: "· ";
+}
+
+.Content{
+    width: 100%;
+}

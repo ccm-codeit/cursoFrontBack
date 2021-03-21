@@ -1,17 +1,19 @@
 import "./styles/App.css";
-import OpinionCard from "./components/OpinionCard";
-import Post from "./components/Post";
+import Tweet from "./components/Tweet";
+import Header from "./components/Header";
 import { useState } from "react";
 
 function App() {
-  const [card, setCard] = useState({          // la información de los inputs
+  const [card, setCard] = useState({
+    // la información de los inputs
     title: "",
     description: "",
   });
 
-  const [cards, setCards] = useState([]);     // lista de nuestras 'Opinion Cards'
+  const [cards, setCards] = useState([]); // lista de nuestras 'Opinion Cards'
 
-  const handleOnChange = (e) => {             // manejador de cambios en input
+  const handleOnChange = (e) => {
+    // manejador de cambios en input
     setCard({
       ...card,
       [e.target.name]: e.target.value,
@@ -24,8 +26,9 @@ function App() {
     });
   };
 
-  const onSubmit = (e) => {       // agrega una nueva card a la lista de cards
-    e.preventDefault();           // evita que recargue la página
+  const onSubmit = (e) => {
+    // agrega una nueva card a la lista de cards
+    e.preventDefault(); // evita que recargue la página
     setCards((cards) => [...cards, card]);
     console.log(cards);
   };
@@ -33,9 +36,7 @@ function App() {
   return (
     <div className="App">
       <div className="Main-Wrapper">
-
-        <Post count={cards.length}/>
-
+        <Header />
         <div className="Comment-Section">
           <form className="Form-Wrapper">
             <p>What do you think?</p>
@@ -51,7 +52,7 @@ function App() {
             <label className="Desc-Contanier">
               <textarea
                 name="description"
-                placeholder="I think that..." 
+                placeholder="I think that..."
                 onChange={handleOnChange}
                 className="Desc-Input"
               />
@@ -63,18 +64,18 @@ function App() {
           </form>
 
           <div>
-            {cards.map((card, index) => {
+            {/* {cards.map((card, index) => {
               return (
-                <OpinionCard
+                <Tweet
                   title={card.title}
                   description={card.description}
                   onDelete={() => handleOnDelete(index)}
                 />
               );
-            })}
+            })} */}
+            <Tweet />
           </div>
         </div>
-        
       </div>
     </div>
   );

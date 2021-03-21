@@ -4,11 +4,11 @@ import "../styles/App.css";
 function OpinionCard(props) {
   return (
     <div className="Card-Wrapper">
-      <p className="Card-Title">{props.title}</p>
-      <p className="Card-Description">{props.description}</p>
-      <button className="Card-Delete" onClick={props.onDelete}>
-        Delete
-      </button>
+      <picture className="Card-Img-Container">
+        <img className="Card-Img" />
+      </picture>
+
+      <div className="Card-Content-Container"> </div>
     </div>
   );
 }

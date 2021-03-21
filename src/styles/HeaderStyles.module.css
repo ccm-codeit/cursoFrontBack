@@ -1,0 +1,13 @@
+
+.Title {
+    font-size: 2.8rem;
+    font-weight: 900;
+}
+
+.TweetButton {
+    padding: 0 1em;
+    border-radius: 9999px;
+    background-color: rgb(29, 161, 242);
+    color: white;
+    min-height: 40px;
+}
