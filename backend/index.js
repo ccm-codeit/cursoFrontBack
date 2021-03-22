@@ -7,13 +7,14 @@ require('dotenv').config();         // para poder acceder a la información en .
 const express = require('express');
 const server = express();              // inicializar un servidor de express para recibir requests
 const router = express.Router();    // ayuda a dirigir la solicitud recibida al código correcto
-const port = 3010;   // puerto donde se corre el servidor. Todo servicio en tu compu requiere un servidor
+const port = process.env.PORT || 3010;   // puerto donde se corre el servidor. Todo servicio en tu compu requiere un servidor
 
 // Dependencias
+const cors = require('cors');
 
 // Connexión a base de datos
 const mongoose = require("mongoose");
-const URI = "mongodb+srv://databaseUser:javascript-me@cluster0.8mmoe.mongodb.net/AuthTest?retryWrites=true&w=majority";
+const URI = process.env.CONNECTIONSTRING;
 
 mongoose.connect(URI, {
   useNewUrlParser: true,
@@ -26,6 +27,7 @@ db.on('error', err => console.error(err));      // si hay evento de error notifi
 db.once('open', ()=> console.log("Conexión con Mongo exitosa"));  // una vez abierta la conexión notificalo
 
 // Middleware para el manejo de requests
+server.use(cors())
 server.use(express.json());        // el formato de los datos usados es JSON
 
 // Modelos de la Base de Datos
