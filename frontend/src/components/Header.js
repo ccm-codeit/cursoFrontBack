@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "../styles/HeaderStyles.module.css";
 import { AiOutlineTwitter } from "react-icons/ai";
 import { FiSearch } from "react-icons/fi";
@@ -7,13 +7,16 @@ import axios from "axios";
 
 export default function Header(props) {
   const [tweet, setTweet] = useState("");
+  const [isSearching, setIsSearching] = useState(false);
 
   const handleOnChange = (e) => {
     // manejador de cambios en input
     setTweet(e.target.value);
   };
 
-  const submit = props.onSubmit;
+  const onSubmit = props.onSubmit;
+  const onSearch = props.onSearch;
+
 
   return (
     <div className={styles.Wrapper}>
@@ -38,7 +41,7 @@ export default function Header(props) {
           <div className={styles.TweetButtonContainer}>
             <button
               className={styles.TweetButton}
-              onClick={() => submit(tweet)}
+              onClick={() => {onSubmit(tweet)}}
             >
               Tweet
             </button>
@@ -47,7 +50,7 @@ export default function Header(props) {
       </div>
       <div className={styles.SearchBox}>
         <div className={styles.SearchBar}>
-          <span className={styles.SearchIcon}>
+          <span className={styles.SearchIcon} onClick={()=>onSearch("Hello")}>
             <FiSearch />
           </span>
           <input
