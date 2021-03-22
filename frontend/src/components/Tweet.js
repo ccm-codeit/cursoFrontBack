@@ -1,7 +1,13 @@
 import React from "react";
 import styles from "../styles/Tweet.module.css";
 import profilePic from "../img/profilepic.jpg";
+import moment from 'moment';
+
 function Tweet(props) {
+  const username = props.username;
+  const tweet = props.tweet;
+  const posted = props.posted;
+
   return (
     <div className={styles.Wrapper}>
       <picture className={styles.ImgContainer}>
@@ -10,11 +16,10 @@ function Tweet(props) {
 
       <div className={styles.ContentContainer}>
         <b className={styles.Name}>Einar López</b>
-        <p className={styles.Username}>EinarLop</p>
-        <p className={styles.Date}>5min</p>
+        <p className={styles.Username}>{username}</p>
+        <p className={styles.Date}>{moment(posted).fromNow(true)}</p>
         <p className={styles.Content}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua
+          {tweet}
         </p>
       </div>
     </div>

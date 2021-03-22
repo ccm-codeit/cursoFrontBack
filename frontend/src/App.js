@@ -1,15 +1,25 @@
 import "./styles/App.css";
 import Tweet from "./components/Tweet";
 import Header from "./components/Header";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 //TEST
 function App() {
   const [tweetList, setTweetList] = useState([]); // lista de nuestras 'Opinion Cards'
-
+  
+  useEffect(() => {
+    axios.get("http://localhost:3010/feed")
+      .then(results =>{
+        console.log(results)
+        setTweetList(results.data);
+      } 
+    ).catch(err => { 
+      console.log(err)
+    })
+  }, []);
+  
   const onSubmit = (tweet) => {
     // agrega un nuevo tweet a la lista de tweets y lo sube a la nube
-
     const Tweet = {
       username: "einarlop",
       tweet: tweet,
@@ -30,6 +40,9 @@ function App() {
   };
 
   const onSearch = (query) => {
+    if (query==="") {
+      return;
+    }
     console.log("Querying...", query);
     axios.get('http://localhost:3010/tweets/' + query)
     .then(results => {
@@ -42,22 +55,24 @@ function App() {
     })
   }
 
+
+  
   return (
     <div className="App">
       <div className="Main-Wrapper">
         <Header onSubmit={onSubmit} onSearch={onSearch}/>
         <div className="Comment-Section">
           <div>
-            {/* {cards.map((card, index) => {
+            {tweetList ? <div>
+            {tweetList.map((twt, index) => {
               return (
                 <Tweet
-                  title={card.title}
-                  description={card.description}
-                  onDelete={() => handleOnDelete(index)}
+                  username={twt.username}
+                  tweet={twt.tweet}
+                  posted={twt.posted}
                 />
               );
-            })} */}
-            <Tweet />
+            })}</div> : <p>LOADING TWEETS...</p> }
           </div>
         </div>
       </div>

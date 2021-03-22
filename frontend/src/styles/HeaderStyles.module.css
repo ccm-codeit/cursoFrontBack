@@ -71,6 +71,9 @@
     font-weight: 700;
 }
 
+.TweetButton:focus{
+    outline: none;
+}
 .SearchBar {
     width: 100%;
     border-radius: 100px;
