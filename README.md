@@ -4,7 +4,7 @@ Bienvenido al repositorio del mini-proyecto que se realizará en el taller de Co
 ## ¿De qué va el proyecto?
 Crearemos un clon de Twitter completamante fullstack.
 Conectaremos un frontend en React con un backend en Node ultilizando Axios.
-Tanto el frontend como el backend se te prpoporcionaran, para enfocarcnos únicamente en la conexión de los dos.
+Tanto el frontend como el backend se te proporcionarán, para enfocarnos únicamente en la conexión de los dos.
 
 ### En este taller, aprenderás:
 - ¿Qué significa fullstack?
@@ -19,9 +19,8 @@ En `begin`, encontrarás una versión del proyecto inicial, antes de haber desar
 
 ## Comándos útiles
 ### `npm start`
-
-
-Corre la app en modo de desarrollo (localmente).\
+En la terminal donde se encuntran tus archivos del frontend (`App.js` y demás).
+Corre el frontend de la app en modo de desarrollo (localmente).\
 Abre [http://localhost:3000](http://localhost:3000) para visualizar el frontend en el navegador.
 
 La página se recarga automáticamente si haces cambios en el código.\
@@ -30,8 +29,8 @@ También podrás ver errores (si los hay) en la consola del navegador. Abre la c
 Para detener el servidor de desarrollo, en la terminal presiona `Ctrl` + `C`.
 
 ### `nodemon server`
-
-Corre el servidor en modo desarrollo (localmente) en el puerto 5000
+En otra terminal, dentro del directorio donde guardas tus archivos del backend (como `server.js` y demás).
+Corre el servidor en modo desarrollo (localmente) en el puerto 3010
 El servidor se refescara automaticamente despueés de cualquier modificación en el código
 
 # cursoFrontBack
