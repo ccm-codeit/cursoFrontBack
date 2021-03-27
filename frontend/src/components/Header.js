@@ -21,7 +21,6 @@ export default function Header(props) {
   };
 
   const onSubmit = props.onSubmit;
-  const onSearch = props.onSearch;
 
   const handleQuery = (e) => {
     let val = e.target.value;
@@ -66,7 +65,6 @@ export default function Header(props) {
           <span
             className={styles.SearchIcon}
             onClick={() => {
-              onSearch(query);
               setQuery("");
             }}
           >
