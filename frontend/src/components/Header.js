@@ -2,12 +2,18 @@ import React, { useState, useEffect } from "react";
 import styles from "../styles/HeaderStyles.module.css";
 import { AiOutlineTwitter } from "react-icons/ai";
 import { FiSearch } from "react-icons/fi";
-import profilePic from "../img/profilepic.jpg";
+import profilePicDog from "../img/profilepicdog.jpg";
+import profilePicCat from "../img/profilepiccat.jpeg";
+import profilePicTurtle from "../img/profilepicturtle.jpeg";
+import profilePicDuck from "../img/profilepicduck.jpeg";
+import profilePicRabbit from "../img/profilepicrabbit.jpeg";
+
 import axios from "axios";
 
 export default function Header(props) {
   const [tweet, setTweet] = useState("");
   const [isSearching, setIsSearching] = useState(false);
+  const [query, setQuery] = useState("");
 
   const handleOnChange = (e) => {
     // manejador de cambios en input
@@ -17,6 +23,10 @@ export default function Header(props) {
   const onSubmit = props.onSubmit;
   const onSearch = props.onSearch;
 
+  const handleQuery = (e) => {
+    let val = e.target.value;
+    setQuery(val);
+  };
 
   return (
     <div className={styles.Wrapper}>
@@ -29,7 +39,7 @@ export default function Header(props) {
         </div>
         <div>
           <div className={styles.Row1}>
-            <img className={styles.Img} src={profilePic}></img>
+            <img className={styles.Img} src={profilePicTurtle}></img>
             <input
               type="text"
               className={styles.Input}
@@ -41,7 +51,10 @@ export default function Header(props) {
           <div className={styles.TweetButtonContainer}>
             <button
               className={styles.TweetButton}
-              onClick={() => {onSubmit(tweet)}}
+              onClick={() => {
+                setTweet("");
+                onSubmit(tweet);
+              }}
             >
               Tweet
             </button>
@@ -50,13 +63,21 @@ export default function Header(props) {
       </div>
       <div className={styles.SearchBox}>
         <div className={styles.SearchBar}>
-          <span className={styles.SearchIcon} onClick={()=>onSearch("Hello")}>
+          <span
+            className={styles.SearchIcon}
+            onClick={() => {
+              onSearch(query);
+              setQuery("");
+            }}
+          >
             <FiSearch />
           </span>
           <input
             className={styles.SearchInput}
             type="text"
             placeholder="Search Twitter"
+            value={query}
+            onChange={handleQuery}
           />
         </div>
       </div>

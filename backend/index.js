@@ -28,14 +28,14 @@ server.use(cors())
 server.use(express.json());
 
 // Modelos de la Base de Datos
-const Tweet = require('./models/tweet.js');
+const Tweet = require("./models/tweet.js");
 
 /* ---RUTAS--- */
 // GET: dame información
 // POST: te mando información
 
 // Dirección base
-server.get('/', function (req, res) {
+server.get("/", function (req, res) {
     res.send("Bienvenido a la API de Twitter");
 });
 
