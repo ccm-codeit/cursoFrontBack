@@ -42,7 +42,7 @@ server.get("/", function (req, res) {
 // Obtener todos los tweets
 server.get('/tweets', function (req, res) {
     // busca todos los tweets, cuando los tengas regrésamelos. Si hubo algún error, notificalo.
-    Tweet.find()
+    Tweet.find().sort({posted: 'desc'})
         .then((results) => {
             res.json(results);
         })
@@ -77,7 +77,7 @@ server.post('/', function (req, res) {
 server.get('/tweets/:username', function (req, res) {
     const user = req.params.username;
     console.log("Buscando tweets del usuario: " + user);
-    Tweet.find({ "username": user })
+    Tweet.find({ "username": user }).sort({posted: 'desc'})
         .then((results) => {
             res.json(results);
         })
