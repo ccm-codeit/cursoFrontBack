@@ -3,13 +3,11 @@
 // Setup inicial
 const express = require('express');
 const server = express();             
-const port = process.env.PORT || 3010;   
-
-const cors = require('cors');
+const port = 3010;   
 
 // Connexión a base de datos
 const mongoose = require("mongoose");
-const URI = "mongodb+srv://dbUser:dbPass321@cluster0.tyuzw.mongodb.net/Twitter?retryWrites=true&w=majority";
+const URI = "mongodb+srv://dbUser:<password>@cluster0.tyuzw.mongodb.net/Twitter?retryWrites=true&w=majority";
 console.log(URI);
 
 mongoose.connect(URI, {
@@ -23,7 +21,6 @@ db.on('error', err => console.error(err));
 db.once('open', () => console.log("Conexión con Mongo exitosa"));  
 
 // Middleware, librerías que vamos a utilizar en el manejo de cada request
-server.use(cors())
 server.use(express.json());
 
 // Modelos de la Base de Datos
