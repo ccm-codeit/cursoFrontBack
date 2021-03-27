@@ -2,7 +2,6 @@ import "./styles/App.css";
 import Tweet from "./components/Tweet";
 import Header from "./components/Header";
 import { useState } from "react";
-import axios from "axios";
 //TEST
 function App() {
   const [tweetList, setTweetList] = useState([]); // lista de nuestras 'Opinion Cards'

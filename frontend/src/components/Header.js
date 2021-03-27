@@ -8,12 +8,8 @@ import profilePicTurtle from "../img/profilepicturtle.jpeg";
 import profilePicDuck from "../img/profilepicduck.jpeg";
 import profilePicRabbit from "../img/profilepicrabbit.jpeg";
 
-import axios from "axios";
-
 export default function Header(props) {
   const [tweet, setTweet] = useState("");
-  const [isSearching, setIsSearching] = useState(false);
-  const [query, setQuery] = useState("");
 
   const handleOnChange = (e) => {
     // manejador de cambios en input
@@ -22,10 +18,6 @@ export default function Header(props) {
 
   const onSubmit = props.onSubmit;
 
-  const handleQuery = (e) => {
-    let val = e.target.value;
-    setQuery(val);
-  };
 
   return (
     <div className={styles.Wrapper}>
@@ -38,7 +30,7 @@ export default function Header(props) {
         </div>
         <div>
           <div className={styles.Row1}>
-            <img className={styles.Img} src={profilePicTurtle}></img>
+            <img className={styles.Img} src={profilePicDog}></img>
             <input
               type="text"
               className={styles.Input}
@@ -65,7 +57,7 @@ export default function Header(props) {
           <span
             className={styles.SearchIcon}
             onClick={() => {
-              setQuery("");
+              console.log("Buscando...");
             }}
           >
             <FiSearch />
@@ -74,8 +66,6 @@ export default function Header(props) {
             className={styles.SearchInput}
             type="text"
             placeholder="Search Twitter"
-            value={query}
-            onChange={handleQuery}
           />
         </div>
       </div>
