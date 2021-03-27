@@ -1,14 +1,14 @@
 GET http://localhost:3010/
 
 ###
-GET http://localhost:3010/feed
+GET http://localhost:3010/tweets
 
 ###
 POST http://localhost:3010/
 Content-Type: application/json
 
 {
-    "username": "test",
+    "username": "einarlop",
     "tweet": "test"
 }
 
