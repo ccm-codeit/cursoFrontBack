@@ -72,6 +72,7 @@ server.get('/tweets/:username', function (req, res) {
     const user = req.params.username;
     console.log("Buscando tweets del usuario: " + user);
     Tweet.find({ "username": user })
+    .sort({posted: 'desc'})
         .then((results) => {
             res.json(results);
         })
@@ -80,6 +81,7 @@ server.get('/tweets/:username', function (req, res) {
             res.json(err);
         })
 })
+
 
 
 server.listen(port, () => console.log("El servidor está corriendo en el puerto " + port));
