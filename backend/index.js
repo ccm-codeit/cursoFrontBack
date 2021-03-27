@@ -36,8 +36,10 @@ server.get("/", function (req, res) {
 });
 
 // Obtener todos los tweets
+
 server.get('/tweets', function (req, res) {
-    Tweet.find()
+    Tweet.find({})
+    .sort({posted: 'desc'})
         .then((results) => {
             res.json(results);
         })
@@ -46,6 +48,7 @@ server.get('/tweets', function (req, res) {
             res.status(500).json({ message: err.message });
         })
 })
+
 
 // Subir un nuevo tweet
 server.post('/', function (req, res) {
